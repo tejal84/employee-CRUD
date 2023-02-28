@@ -1,0 +1,91 @@
+<nav class="navbar navbar-light bg-dark">
+<div class="container-fluid">
+
+    <h1 class="text-light primary py-3">Employee Management System</h1>
+<div>
+    <button class="btn btn-outline-success" (click)="add()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Employee</button>&nbsp;
+    <button class="btn btn-warning">Logout</button>
+</div>
+</div>
+</nav>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allemployeedata">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.company}}</td>
+            <td>{{data.salary}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="edit(data)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Edit</button>&nbsp;
+                <button class="btn btn-warning"  (click)="deleteemployee(data)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Employee Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input type="name" formControlName="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name">
+            <small *ngIf="formValue.get('name')?.invalid && formValue.get('name')?.touched" class="text-danger">Name is required</small>
+         </div>
+          <div class="mb-3">
+            <label for="exampleInputCity" class="form-label">City</label>
+            <input type="city"  formControlName="city" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter City">
+            <small *ngIf="formValue.get('city')?.invalid && formValue.get('city')?.touched" class="text-danger">City is required</small>
+         </div>
+         <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email"  formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+          <small *ngIf="formValue.get('email')?.invalid && formValue.get('email')?.touched" class="text-danger">Email is required</small>
+       </div>
+       <div class="mb-3">
+        <label for="exampleInputCompany" class="form-label">Company</label>
+        <input type="company"  formControlName="company" class="form-control" id="exampleInputCompany" aria-describedby="companyHelp" placeholder="Enter Company Name">
+        <small *ngIf="formValue.get('company')?.invalid && formValue.get('company')?.touched" class="text-danger">Company name is required</small>
+     </div>
+     <div class="mb-3">
+      <label for="exampleInputSalary" class="form-label">Salary</label>
+      <input type="salary"  formControlName="salary" class="form-control" id="exampleInputSalary" aria-describedby="salaryHelp" placeholder="Enter Salary">
+      <small *ngIf="formValue.get('salary')?.invalid && formValue.get('salary')?.touched" class="text-danger">Salary is required</small>
+   </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showadd" (click)="addemployee()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showupdate" (click)="updateemployee()" class="btn btn-success">update</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "sam",
+      "city": "London",
+      "email": "sam@gmail.com",
+      "company": "Infosys",
+      "salary": "600000"
+    },
+    {
+      "id": 3,
+      "name": "sandeep",
+      "city": "Islampur",
+      "email": "sandy@gmail.com",
+      "company": "L&T",
+      "salary": "900000"
+    },
+    {
+      "id": 4,
+      "name": "kiran",
+      "city": "Kolhapur",
+      "email": "kiran@gmail.com",
+      "company": "Wipro",
+      "salary": "70000"
+    },
+    {
+      "id": 5,
+      "name": "Shweta",
+      "city": "Kolhapur",
+      "email": "shweta@gmail.com",
+      "company": "LTI",
+      "salary": "85000"
+    },
+    {
+      "id": 6,
+      "name": "Pallavi",
+      "city": "Mumbai",
+      "email": "pallavi@gmail.com",
+      "company": "Tesla",
+      "salary": "95000"
+    },
+    {
+      "id": 7,
+      "name": "nikita",
+      "city": "Goa",
+      "email": "niki@gmail.com",
+      "company": "Wipro",
+      "salary": "600000"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
